@@ -60,7 +60,7 @@ export const FLOWERS: FlowerEntry[] = [
     color: 'pink',
     title: "You're a pink flower because…",
     message:
-      "you have this soft, easy vibe that just makes people smile… especially me. Not saying you're my favorite, but you're definitely in the top 1.",
+      "you’re the softest and most comforting part of my life, the little moments with you that somehow end up meaning the most to me. With you, love feels gentle, easy, and something I never want to lose.",
     image: '/photos/pink.jpeg',
     music: '/music/pink.mp3',
     position: { left: '47%', top: '16%', scale: 1.0, rotate: 0 },
@@ -70,7 +70,7 @@ export const FLOWERS: FlowerEntry[] = [
     color: 'red',
     title: "You're a red flower because…",
     message:
-      "you somehow manage to be bold and chill at the same time. Also, I’m like 80% sure you cause my random smiles during the day.",
+      "with you, love isn't just something I say, it's something I feel deeply in every moment we share. You're not just someone I love, you're someone who has become a part of me in the most intense and real way.",
     image: '/photos/red.jpeg',
     music: '/music/red.mp3',
     position: { left: '20%', top: '25%', scale: 0.98, rotate: -20 },
@@ -80,7 +80,7 @@ export const FLOWERS: FlowerEntry[] = [
     color: 'blue',
     title: "You're a blue flower because…",
     message:
-      "I feel like your brain does overtime for no reason sometimes… but hey, at least it gives you personality (and gives me reasons to talk to you).",
+      "you’re the embodiment of kindness and serenity, and every time I’m with you, everything just feels calmer and right. Being around you makes me want to admire and adore you in the purest way possible.",
     image: '/photos/blue.jpeg',
     music: '/music/blue.mp3',
     position: { left: '74%', top: '30%', scale: 0.98, rotate: 20 },
@@ -91,7 +91,7 @@ export const FLOWERS: FlowerEntry[] = [
     color: 'white',
     title: "You're a white flower because…",
     message:
-      "you’ve got this simple, genuine vibe that’s really rare. Also, talking to you is suspiciously easy… I don’t trust how comfortable it is.",
+      "you’re the personification of purity and peace, the one who brings a sense of calm and comfort to my heart without even trying. Around you, everything feels lighter, like I’m living in a dream I never want to wake up from.",
     image: '/photos/white.jpeg',
     music: '/music/white.mp3',
     position: { left: '47%', top: '34%', scale: 0.95, rotate: 0 },
@@ -101,7 +101,7 @@ export const FLOWERS: FlowerEntry[] = [
     color: 'yellow',
     title: "You're a yellow flower because…",
     message:
-      "you bring good energy wherever you go. Like… if you were a weather forecast, you’d be 'sunny with a high chance of me wanting to hang out.",
+  "you’re the sunshine that brightens even my worst days, the reason behind so many of my smiles without you even knowing it. You make life feel warmer and happier, and you constantly inspire me to be a better person.",
     image: '/photos/yellow.jpeg',
     music: '/music/yellow.mp3',
     position: { left: '22%', top: '46%', scale: 0.96, rotate: -20 },
@@ -111,7 +111,7 @@ export const FLOWERS: FlowerEntry[] = [
     color: 'purple',
     title: "You're a purple flower because…",
     message:
-      "you've got this slightyly mysterious and uniquely embracing charm which never ceases to amaze me, I still couldn't comprehend how I got so lucky to have you.",
+      "you have this slightly mysterious yet incredibly comforting charm that pulls me in more every day. I still can’t fully understand how I got so lucky to have someone like you in my life.",
     image: '/photos/purple.jpeg',
     music: '/music/purple.mp3',
     position: { left: '70%', top: '50%', scale: 0.96, rotate: 20 },
@@ -122,7 +122,7 @@ export const FLOWERS: FlowerEntry[] = [
     color: 'orange',
     title: "You're an orange flower because…",
     message:
-      "you've got this fun, energetic vibe that makes everything around you so vibrant. Also, I feel like hanging out with you would be a great decision… just saying.",
+    "you bring this fun, energetic vibe that makes everything around you feel alive and exciting. No matter how I’m feeling, you somehow always manage to light something up inside me and make everything better.",
     image: '/photos/orange.jpeg',
     music: '/music/orange.mp3',
     position: { left: '46%', top: '54%', scale: 1.02, rotate: -3 },
