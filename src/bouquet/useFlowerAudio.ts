@@ -1,8 +1,10 @@
 import { useEffect, useRef } from 'react';
 
-const PLAY_VOLUME = 0.6;
+const PLAY_VOLUME = 0.45;
 /** Wait this long after a flower opens so the paper SFX gets a head start. */
 const MUSIC_START_DELAY_MS = 350;
+/** Volume ramp when starting a track — gentle swell rather than abrupt cut-in. */
+const FADE_IN_MS = 1000;
 /** Duration of the volume ramp when the flower is closed. */
 const FADE_OUT_MS = 700;
 
@@ -64,15 +66,27 @@ export function useFlowerAudio(src: string | null | undefined) {
       return;
     }
 
-    // Starting a new track — let the paper SFX play first, then come in.
+    // Starting a new track — let the paper SFX play first, then swell in.
     audio.src = src;
     audio.currentTime = 0;
-    audio.volume = PLAY_VOLUME;
 
     const startTimer = window.setTimeout(() => {
+      audio.volume = 0;
       audio.play().catch(() => {
         /* Autoplay blocked — first click hasn't happened yet. Safe to ignore. */
       });
+
+      const fadeStart = performance.now();
+      const fadeIn = (now: number) => {
+        const t = Math.min(1, (now - fadeStart) / FADE_IN_MS);
+        audio.volume = PLAY_VOLUME * t;
+        if (t < 1) {
+          fadeRafRef.current = requestAnimationFrame(fadeIn);
+        } else {
+          fadeRafRef.current = null;
+        }
+      };
+      fadeRafRef.current = requestAnimationFrame(fadeIn);
     }, MUSIC_START_DELAY_MS);
 
     return () => {
