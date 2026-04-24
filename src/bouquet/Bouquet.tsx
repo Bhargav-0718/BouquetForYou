@@ -3,6 +3,7 @@ import { BouquetBase } from './BouquetBase';
 import { Flower } from './Flower';
 import { RevealOverlay } from './RevealOverlay';
 import { useFlowerAudio } from './useFlowerAudio';
+import { playPaperSound } from './paperSound';
 import { FLOWERS } from './flowerData';
 import './Bouquet.css';
 
@@ -15,7 +16,11 @@ export function Bouquet() {
   useFlowerAudio(openFlower?.music ?? null);
 
   const toggle = useCallback((id: string) => {
-    setOpenId((current) => (current === id ? null : id));
+    setOpenId((current) => {
+      if (current === id) return null; // same flower clicked → close, no SFX
+      playPaperSound(); // opening (or switching to a different flower)
+      return id;
+    });
   }, []);
 
   const close = useCallback(() => setOpenId(null), []);
