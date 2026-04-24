@@ -1,43 +1,91 @@
 import { useEffect, useRef } from 'react';
 
+const PLAY_VOLUME = 0.6;
+/** Wait this long after a flower opens so the paper SFX gets a head start. */
+const MUSIC_START_DELAY_MS = 350;
+/** Duration of the volume ramp when the flower is closed. */
+const FADE_OUT_MS = 700;
+
 /**
- * Plays a single track at a time. Pass `null`/`undefined` to stop.
+ * Plays one looping track at a time.
+ *
+ *   src truthy → after a small delay (so the paper SFX leads), start the
+ *                track from the beginning at full volume; loops forever.
+ *   src null   → fade volume to 0 over ~700ms then pause.
+ *   src change → cancel any in-progress fade and switch to the new track.
  *
  * Audio never autoplays — the first user click on a flower is the gesture
- * that unlocks playback, so the .play() promise rejection on initial mount
- * (when src is null) is irrelevant.
+ * that unlocks playback in the browser.
  */
 export function useFlowerAudio(src: string | null | undefined) {
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const fadeRafRef = useRef<number | null>(null);
 
   if (audioRef.current === null && typeof Audio !== 'undefined') {
-    audioRef.current = new Audio();
-    audioRef.current.preload = 'none';
-    audioRef.current.volume = 0.6;
+    const a = new Audio();
+    a.preload = 'none';
+    a.loop = true;
+    a.volume = PLAY_VOLUME;
+    audioRef.current = a;
   }
 
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
 
+    // Cancel any in-flight fade — either we're starting a fresh track or
+    // we're chaining into another close.
+    if (fadeRafRef.current !== null) {
+      cancelAnimationFrame(fadeRafRef.current);
+      fadeRafRef.current = null;
+    }
+
     if (!src) {
-      audio.pause();
+      // Already silent? Just make sure it's paused.
+      if (audio.paused || audio.volume === 0) {
+        audio.pause();
+        audio.volume = PLAY_VOLUME;
+        return;
+      }
+      const startVol = audio.volume;
+      const startTime = performance.now();
+      const tick = (now: number) => {
+        const t = Math.min(1, (now - startTime) / FADE_OUT_MS);
+        audio.volume = startVol * (1 - t);
+        if (t < 1) {
+          fadeRafRef.current = requestAnimationFrame(tick);
+        } else {
+          audio.pause();
+          audio.volume = PLAY_VOLUME; // restore for next play
+          fadeRafRef.current = null;
+        }
+      };
+      fadeRafRef.current = requestAnimationFrame(tick);
       return;
     }
 
+    // Starting a new track — let the paper SFX play first, then come in.
     audio.src = src;
     audio.currentTime = 0;
-    audio.play().catch(() => {
-      /* Browser blocked playback (no gesture yet) — silently ignore. */
-    });
+    audio.volume = PLAY_VOLUME;
+
+    const startTimer = window.setTimeout(() => {
+      audio.play().catch(() => {
+        /* Autoplay blocked — first click hasn't happened yet. Safe to ignore. */
+      });
+    }, MUSIC_START_DELAY_MS);
 
     return () => {
-      audio.pause();
+      window.clearTimeout(startTimer);
     };
   }, [src]);
 
+  // Tear down on unmount.
   useEffect(() => {
     return () => {
+      if (fadeRafRef.current !== null) {
+        cancelAnimationFrame(fadeRafRef.current);
+      }
       const audio = audioRef.current;
       if (audio) {
         audio.pause();

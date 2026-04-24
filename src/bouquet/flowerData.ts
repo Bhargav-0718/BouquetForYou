@@ -38,14 +38,17 @@ export interface FlowerEntry {
 }
 
 /**
- * Example data — drop in real photos and audio under /public when ready.
- * The `image` and `music` fields are optional; the card gracefully omits
- * either one if missing.
+ * Example data.
  *
- * Layout matches the target Original.png: 3 back (red / pink peak / blue),
- * 3 middle (yellow / white center / purple), 1 front (orange). Array order
- * controls z-stacking: later entries render on top, so the ordering below
- * is back-to-front to produce the tight bouquet overlap.
+ * Per-flower assets follow this convention — drop files at these paths
+ * under /public and they'll be served automatically:
+ *   - photo: /photos/<id>.jpg   (e.g. public/photos/pink.jpg)
+ *   - music: /music/<id>.mp3    (e.g. public/music/pink.mp3)
+ * Use any extension you like — just match what's in the field below.
+ *
+ * Layout matches the target Original.png: 3 back (pink peak / red / blue),
+ * 3 middle (yellow / white center / purple), 1 front (orange). Array
+ * order controls z-stacking — later entries render on top.
  */
 export const FLOWERS: FlowerEntry[] = [
   // --- back row ---
@@ -57,6 +60,8 @@ export const FLOWERS: FlowerEntry[] = [
     title: "You're a pink flower because…",
     message:
       "of the soft way you laugh, the way you hold my hand without thinking. Every gentle moment with you is a tiny forever.",
+    image: '/photos/pink.jpg',
+    music: '/music/pink.mp3',
     position: { left: '47%', top: '16%', scale: 1.0, rotate: 0 },
   },
   {
@@ -65,6 +70,8 @@ export const FLOWERS: FlowerEntry[] = [
     title: "You're a red flower because…",
     message:
       "you set my heart on fire in the calmest way — fierce, brave, and impossibly warm. Loving you feels like coming home.",
+    image: '/photos/red.jpg',
+    music: '/music/red.mp3',
     position: { left: '20%', top: '25%', scale: 0.98, rotate: -20 },
   },
   {
@@ -73,6 +80,8 @@ export const FLOWERS: FlowerEntry[] = [
     title: "You're a blue flower because…",
     message:
       "you are calm where I am storm. You hold me together when I'm scattered, and you make stillness feel like the best place to be.",
+    image: '/photos/blue.jpg',
+    music: '/music/blue.mp3',
     position: { left: '74%', top: '30%', scale: 0.98, rotate: 20 },
   },
   // --- middle row (rendered in front of back row) ---
@@ -82,6 +91,8 @@ export const FLOWERS: FlowerEntry[] = [
     title: "You're a white flower because…",
     message:
       "of the quiet kind of love you give — patient, steady, true. You make ordinary days feel sacred.",
+    image: '/photos/white.jpg',
+    music: '/music/white.mp3',
     position: { left: '47%', top: '34%', scale: 0.95, rotate: 0 },
   },
   {
@@ -90,6 +101,8 @@ export const FLOWERS: FlowerEntry[] = [
     title: "You're a yellow flower because…",
     message:
       "you are sunshine on the days the world feels grey. Your joy is contagious, and your light makes everything bloom.",
+    image: '/photos/yellow.jpg',
+    music: '/music/yellow.mp3',
     position: { left: '22%', top: '46%', scale: 0.96, rotate: -20 },
   },
   {
@@ -98,6 +111,8 @@ export const FLOWERS: FlowerEntry[] = [
     title: "You're a purple flower because…",
     message:
       "you're a little bit magical — thoughtful, dreamy, the kind of person I'd write poems about if I were any good at them.",
+    image: '/photos/purple.jpg',
+    music: '/music/purple.mp3',
     position: { left: '70%', top: '50%', scale: 0.96, rotate: 20 },
   },
   // --- front ---
@@ -107,6 +122,8 @@ export const FLOWERS: FlowerEntry[] = [
     title: "You're an orange flower because…",
     message:
       "of your spark — your wild ideas, your bright energy, the way you pull me into adventures I'd have been too shy to chase alone.",
+    image: '/photos/orange.jpg',
+    music: '/music/orange.mp3',
     position: { left: '46%', top: '54%', scale: 1.02, rotate: -3 },
   },
 ];
