@@ -42,7 +42,8 @@ export interface FlowerEntry {
  *
  * Per-flower assets follow this convention — drop files at these paths
  * under /public and they'll be served automatically:
- *   - photo: /photos/<id>.jpg   (e.g. public/photos/pink.jpg)
+ *   - photo: /photos/<id>.jpg or /photos/<id>.jpeg
+ *            (e.g. public/photos/pink.jpg or public/photos/pink.jpeg)
  *   - music: /music/<id>.mp3    (e.g. public/music/pink.mp3)
  * Use any extension you like — just match what's in the field below.
  *
@@ -60,7 +61,7 @@ export const FLOWERS: FlowerEntry[] = [
     title: "You're a pink flower because…",
     message:
       "you have this soft, easy vibe that just makes people smile… especially me. Not saying you're my favorite, but you're definitely in the top 1.",
-    image: '/photos/pink.jpg',
+    image: '/photos/pink.jpeg',
     music: '/music/pink.mp3',
     position: { left: '47%', top: '16%', scale: 1.0, rotate: 0 },
   },
@@ -70,7 +71,7 @@ export const FLOWERS: FlowerEntry[] = [
     title: "You're a red flower because…",
     message:
       "you somehow manage to be bold and chill at the same time. Also, I’m like 80% sure you cause my random smiles during the day.",
-    image: '/photos/red.jpg',
+    image: '/photos/red.jpeg',
     music: '/music/red.mp3',
     position: { left: '20%', top: '25%', scale: 0.98, rotate: -20 },
   },
@@ -80,7 +81,7 @@ export const FLOWERS: FlowerEntry[] = [
     title: "You're a blue flower because…",
     message:
       "I feel like your brain does overtime for no reason sometimes… but hey, at least it gives you personality (and gives me reasons to talk to you).",
-    image: '/photos/blue.jpg',
+    image: '/photos/blue.jpeg',
     music: '/music/blue.mp3',
     position: { left: '74%', top: '30%', scale: 0.98, rotate: 20 },
   },
@@ -91,7 +92,7 @@ export const FLOWERS: FlowerEntry[] = [
     title: "You're a white flower because…",
     message:
       "you’ve got this simple, genuine vibe that’s really rare. Also, talking to you is suspiciously easy… I don’t trust how comfortable it is.",
-    image: '/photos/white.jpg',
+    image: '/photos/white.jpeg',
     music: '/music/white.mp3',
     position: { left: '47%', top: '34%', scale: 0.95, rotate: 0 },
   },
@@ -101,7 +102,7 @@ export const FLOWERS: FlowerEntry[] = [
     title: "You're a yellow flower because…",
     message:
       "you bring good energy wherever you go. Like… if you were a weather forecast, you’d be 'sunny with a high chance of me wanting to hang out.",
-    image: '/photos/yellow.jpg',
+    image: '/photos/yellow.jpeg',
     music: '/music/yellow.mp3',
     position: { left: '22%', top: '46%', scale: 0.96, rotate: -20 },
   },
@@ -110,8 +111,8 @@ export const FLOWERS: FlowerEntry[] = [
     color: 'purple',
     title: "You're a purple flower because…",
     message:
-      "you’ve got this slightly mysterious, slightly chaotic charm… and I’m honestly curious to figure you out (in a non-creepy way, promise).",
-    image: '/photos/purple.jpg',
+      "you've got this slightyly mysterious and uniquely embracing charm which never ceases to amaze me, I still couldn't comprehend how I got so lucky to have you.",
+    image: '/photos/purple.jpeg',
     music: '/music/purple.mp3',
     position: { left: '70%', top: '50%', scale: 0.96, rotate: 20 },
   },
@@ -121,8 +122,8 @@ export const FLOWERS: FlowerEntry[] = [
     color: 'orange',
     title: "You're an orange flower because…",
     message:
-      "you’ve got this fun, energetic vibe that makes everything less boring. Also, I feel like hanging out with you would be a great decision… just saying.",
-    image: '/photos/orange.jpg',
+      "you've got this fun, energetic vibe that makes everything around you so vibrant. Also, I feel like hanging out with you would be a great decision… just saying.",
+    image: '/photos/orange.jpeg',
     music: '/music/orange.mp3',
     position: { left: '46%', top: '54%', scale: 1.02, rotate: -3 },
   },
