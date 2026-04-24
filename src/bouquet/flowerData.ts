@@ -59,7 +59,7 @@ export const FLOWERS: FlowerEntry[] = [
     color: 'pink',
     title: "You're a pink flower because…",
     message:
-      "of the soft way you laugh, the way you hold my hand without thinking. Every gentle moment with you is a tiny forever.",
+      "you have this soft, easy vibe that just makes people smile… especially me. Not saying you're my favorite, but you're definitely in the top 1.",
     image: '/photos/pink.jpg',
     music: '/music/pink.mp3',
     position: { left: '47%', top: '16%', scale: 1.0, rotate: 0 },
@@ -69,7 +69,7 @@ export const FLOWERS: FlowerEntry[] = [
     color: 'red',
     title: "You're a red flower because…",
     message:
-      "you set my heart on fire in the calmest way — fierce, brave, and impossibly warm. Loving you feels like coming home.",
+      "you somehow manage to be bold and chill at the same time. Also, I’m like 80% sure you cause my random smiles during the day.",
     image: '/photos/red.jpg',
     music: '/music/red.mp3',
     position: { left: '20%', top: '25%', scale: 0.98, rotate: -20 },
@@ -79,7 +79,7 @@ export const FLOWERS: FlowerEntry[] = [
     color: 'blue',
     title: "You're a blue flower because…",
     message:
-      "you are calm where I am storm. You hold me together when I'm scattered, and you make stillness feel like the best place to be.",
+      "I feel like your brain does overtime for no reason sometimes… but hey, at least it gives you personality (and gives me reasons to talk to you).",
     image: '/photos/blue.jpg',
     music: '/music/blue.mp3',
     position: { left: '74%', top: '30%', scale: 0.98, rotate: 20 },
@@ -90,7 +90,7 @@ export const FLOWERS: FlowerEntry[] = [
     color: 'white',
     title: "You're a white flower because…",
     message:
-      "of the quiet kind of love you give — patient, steady, true. You make ordinary days feel sacred.",
+      "you’ve got this simple, genuine vibe that’s really rare. Also, talking to you is suspiciously easy… I don’t trust how comfortable it is.",
     image: '/photos/white.jpg',
     music: '/music/white.mp3',
     position: { left: '47%', top: '34%', scale: 0.95, rotate: 0 },
@@ -100,7 +100,7 @@ export const FLOWERS: FlowerEntry[] = [
     color: 'yellow',
     title: "You're a yellow flower because…",
     message:
-      "you are sunshine on the days the world feels grey. Your joy is contagious, and your light makes everything bloom.",
+      "you bring good energy wherever you go. Like… if you were a weather forecast, you’d be 'sunny with a high chance of me wanting to hang out.",
     image: '/photos/yellow.jpg',
     music: '/music/yellow.mp3',
     position: { left: '22%', top: '46%', scale: 0.96, rotate: -20 },
@@ -110,7 +110,7 @@ export const FLOWERS: FlowerEntry[] = [
     color: 'purple',
     title: "You're a purple flower because…",
     message:
-      "you're a little bit magical — thoughtful, dreamy, the kind of person I'd write poems about if I were any good at them.",
+      "you’ve got this slightly mysterious, slightly chaotic charm… and I’m honestly curious to figure you out (in a non-creepy way, promise).",
     image: '/photos/purple.jpg',
     music: '/music/purple.mp3',
     position: { left: '70%', top: '50%', scale: 0.96, rotate: 20 },
@@ -121,7 +121,7 @@ export const FLOWERS: FlowerEntry[] = [
     color: 'orange',
     title: "You're an orange flower because…",
     message:
-      "of your spark — your wild ideas, your bright energy, the way you pull me into adventures I'd have been too shy to chase alone.",
+      "you’ve got this fun, energetic vibe that makes everything less boring. Also, I feel like hanging out with you would be a great decision… just saying.",
     image: '/photos/orange.jpg',
     music: '/music/orange.mp3',
     position: { left: '46%', top: '54%', scale: 1.02, rotate: -3 },
